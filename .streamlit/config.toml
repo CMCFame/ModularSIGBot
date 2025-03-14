@@ -1,0 +1,24 @@
+# ============================================================================
+# ARCOS SIG Form Application - Streamlit Configuration
+# ============================================================================
+# This file configures the Streamlit settings for the ARCOS SIG Form application.
+# It sets various configuration parameters to control the application's behavior.
+# ============================================================================
+
+[theme]
+primaryColor = "#e3051b"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f0f0f0"
+textColor = "#262730"
+font = "sans serif"
+
+[server]
+enableXsrfProtection = true
+enableCORS = false
+maxUploadSize = 10
+
+[browser]
+gatherUsageStats = false
+
+[ui]
+hideTopBar = false
