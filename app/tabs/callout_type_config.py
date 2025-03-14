@@ -141,20 +141,22 @@ def render_overlap_configuration():
         
         cols[0].write(config['name'] if config['name'] else f"Callout Type #{i+1}")
         
+        # Fixed version of the checkbox with lambda function
         cols[1].checkbox("Allow", 
                        value=config['allow_overlap_start'],
                        key=f"ct_overlap_start_{i}",
-                       on_change=lambda idx=i, val=True: update_overlap(idx, "start", val))
+                       on_change=lambda i=i, val=True: update_overlap(i, "start", val))
         
         cols[2].checkbox("Allow", 
                        value=config['allow_overlap_end'],
                        key=f"ct_overlap_end_{i}",
-                       on_change=lambda idx=i, val=True: update_overlap(idx, "end", val))
+                       on_change=lambda i=i, val=True: update_overlap(i, "end", val))
         
+        # Fixed version of the text input with lambda function 
         cols[3].text_input("Minutes", 
                          value=config['overlap_minutes'],
                          key=f"ct_overlap_mins_{i}",
-                         on_change=lambda idx=i, val: update_overlap_minutes(idx, val))
+                         on_change=lambda i=i, val=None: update_overlap_minutes(i, val))
         
         # Add separator
         st.markdown("<hr style='margin: 5px 0;'>", unsafe_allow_html=True)
